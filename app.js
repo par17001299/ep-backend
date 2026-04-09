@@ -4,9 +4,10 @@ import session from "express-session";
 import MySQLStoreFactory from "express-mysql-session";
 import cors from "cors";
 import dotenv from "dotenv";
-import { db } from "./db.js";
-import authRoutes from "./routes/authRoutes.js";
-import usersRoutes from "./routes/usersRoutes.js";
+import { db } from "./src/config/db.js";
+import authRoutes from "./src/modules/auth/auth.routes.js";
+import usersRoutes from "./src/modules/users/users.routes.js";
+
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ const app = express();
 // CORS – adjust origin for your frontend
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN || "http://localhost:3000",
+    origin: process.env.FRONTEND_ORIGIN || "http://localhost:8080",
     credentials: true
   })
 );
