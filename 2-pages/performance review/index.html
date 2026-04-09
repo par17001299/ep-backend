@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Performance Review</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="performance-review.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="../performance review/performnace-review.js" defer></script>
+</head>
+
+<body data-page="performance-review">
+
+  <!-- Topbar -->
+  <header class="topbar neo-glass">
+    <div class="logo">EP Systems</div>
+    <nav class="topbar-actions">
+      <button id="menuButton" class="menu-button ember-glow">Menu</button>
+      <div class="user-badge">User</div>
+    </nav>
+  </header>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu neo-glass" hidden>
+    <div class="menu-section">
+      <h3>Operations</h3>
+      <a href="../maintenance/index.html">Maintenance</a>
+      <a href="../fleet/index.html">Fleet</a>
+      <a href="../inspections/index.html">Inspections</a>
+      <a href="../workloads/index.html">Workloads</a>
+      <a href="../shifts/index.html">Shifts</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>HR</h3>
+      <a href="../attendance/index.html">Attendance</a>
+      <a href="../training-records/index.html">Training Records</a>
+      <a href="../performance-review/index.html">Performance Review</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Quality</h3>
+      <a href="../audit-schedule/index.html">Audit Schedule</a>
+      <a href="../non-conformances/index.html">Non-Conformances</a>
+      <a href="../corrective-actions/index.html">Corrective Actions</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Risk</h3>
+      <a href="../risk-register/index.html">Risk Register</a>
+      <a href="../controls-register/index.html">Controls Register</a>
+      <a href="../controls-testing/index.html">Controls Testing</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Data Governance</h3>
+      <a href="../data-lineage-map/index.html">Data Lineage</a>
+      <a href="../data-steward-register/index.html">Steward Register</a>
+      <a href="../data-retention-schedule/index.html">Retention Schedule</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>IT / System</h3>
+      <a href="../org-structure/index.html">Org Structure</a>
+      <a href="../job-roles/index.html">Job Roles</a>
+      <a href="../access-register/index.html">Access Register</a>
+      <a href="../system-pages/index.html">System Pages</a>
+    </div>
+  </div>
+
+  <!-- Access Control -->
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <!-- Page Content -->
+  <div id="page-content" class="page-container" hidden>
+
+    <h1 class="page-title ember-text">Performance Review</h1>
+
+    <!-- Tabs -->
+    <div class="tabs neo-glass">
+      <button class="tab active" data-tab="reviews">Reviews</button>
+      <button class="tab" data-tab="goals">Goals</button>
+      <button class="tab" data-tab="competencies">Competencies</button>
+    </div>
+
+    <div class="tab-content">
+
+      <!-- Reviews -->
+      <div id="reviews" class="tab-panel active">
+        <div class="panel neo-glass">
+          <h2>Employee Reviews</h2>
+          <table class="pr-table">
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Period</th>
+                <th>Rating</th>
+                <th>Reviewer</th>
+              </tr>
+            </thead>
+            <tbody id="reviewTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Goals -->
+      <div id="goals" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Goals & Objectives</h2>
+          <table class="pr-table">
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Goal</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="goalTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Competencies -->
+      <div id="competencies" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Competency Assessment</h2>
+          <table class="pr-table">
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Competency</th>
+                <th>Level</th>
+              </tr>
+            </thead>
+            <tbody id="competencyTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

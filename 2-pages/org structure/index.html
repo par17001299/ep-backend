@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Org Structure</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="org-structure.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="org-structure.js" defer></script>
+</head>
+
+<body data-page="org-structure">
+
+  <!-- Topbar -->
+  <header class="topbar neo-glass">
+    <div class="logo">EP Systems</div>
+    <nav class="topbar-actions">
+      <button id="menuButton" class="menu-button ember-glow">Menu</button>
+      <div class="user-badge">User</div>
+    </nav>
+  </header>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu neo-glass" hidden>
+    <div class="menu-section">
+      <h3>Operations</h3>
+      <a href="../maintenance/index.html">Maintenance</a>
+      <a href="../fleet/index.html">Fleet</a>
+      <a href="../inspections/index.html">Inspections</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>HR</h3>
+      <a href="../attendance/index.html">Attendance</a>
+      <a href="../training-records/index.html">Training Records</a>
+      <a href="../performance-review/index.html">Performance Review</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Quality</h3>
+      <a href="../audit-schedule/index.html">Audit Schedule</a>
+      <a href="../non-conformances/index.html">Non-Conformances</a>
+      <a href="../corrective-actions/index.html">Corrective Actions</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Risk</h3>
+      <a href="../risk-register/index.html">Risk Register</a>
+      <a href="../controls-register/index.html">Controls Register</a>
+      <a href="../controls-testing/index.html">Controls Testing</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Data Governance</h3>
+      <a href="../data-lineage-map/index.html">Data Lineage</a>
+      <a href="../data-steward-register/index.html">Steward Register</a>
+      <a href="../data-retention-schedule/index.html">Retention Schedule</a>
+    </div>
+  </div>
+
+  <!-- Access Control -->
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <!-- Page Content -->
+  <div id="page-content" class="page-container" hidden>
+
+    <h1 class="page-title ember-text">Organisation Structure</h1>
+
+    <!-- Tabs -->
+    <div class="tabs neo-glass">
+      <button class="tab active" data-tab="departments">Departments</button>
+      <button class="tab" data-tab="roles">Roles</button>
+      <button class="tab" data-tab="people">People</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+
+      <!-- Departments -->
+      <div id="departments" class="tab-panel active">
+        <div class="dept-grid">
+          <div class="dept-card neo-glass">
+            <h2>Operations</h2>
+            <p>Maintenance, Fleet, Workloads, Inspections</p>
+          </div>
+
+          <div class="dept-card neo-glass">
+            <h2>HR</h2>
+            <p>Training, Attendance, Performance</p>
+          </div>
+
+          <div class="dept-card neo-glass">
+            <h2>Quality</h2>
+            <p>Audits, NCRs, CAPA</p>
+          </div>
+
+          <div class="dept-card neo-glass">
+            <h2>Risk</h2>
+            <p>Risk Register, Controls, Testing</p>
+          </div>
+
+          <div class="dept-card neo-glass">
+            <h2>Data Governance</h2>
+            <p>Lineage, Stewardship, Retention</p>
+          </div>
+
+          <div class="dept-card neo-glass">
+            <h2>IT / System</h2>
+            <p>RBAC, Access, System Pages</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roles -->
+      <div id="roles" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Role Hierarchy</h2>
+          <ul class="role-list">
+            <li><span class="dot ember"></span> Administrator</li>
+            <li><span class="dot ember"></span> Manager</li>
+            <li><span class="dot ember"></span> Supervisor</li>
+            <li><span class="dot ember"></span> Standard User</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- People -->
+      <div id="people" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Org Chart</h2>
+          <div class="chart-placeholder">
+            <p>Org Chart Placeholder</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Roles</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="job-roles.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="job-roles.js" defer></script>
+</head>
+
+<body data-page="job-roles">
+
+  <!-- Topbar -->
+  <header class="topbar neo-glass">
+    <div class="logo">EP Systems</div>
+    <nav class="topbar-actions">
+      <button id="menuButton" class="menu-button ember-glow">Menu</button>
+      <div class="user-badge">User</div>
+    </nav>
+  </header>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu neo-glass" hidden>
+    <div class="menu-section">
+      <h3>Operations</h3>
+      <a href="../maintenance/index.html">Maintenance</a>
+      <a href="../fleet/index.html">Fleet</a>
+      <a href="../inspections/index.html">Inspections</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>HR</h3>
+      <a href="../attendance/index.html">Attendance</a>
+      <a href="../training-records/index.html">Training Records</a>
+      <a href="../performance-review/index.html">Performance Review</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Quality</h3>
+      <a href="../audit-schedule/index.html">Audit Schedule</a>
+      <a href="../non-conformances/index.html">Non-Conformances</a>
+      <a href="../corrective-actions/index.html">Corrective Actions</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Risk</h3>
+      <a href="../risk-register/index.html">Risk Register</a>
+      <a href="../controls-register/index.html">Controls Register</a>
+      <a href="../controls-testing/index.html">Controls Testing</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Data Governance</h3>
+      <a href="../data-lineage-map/index.html">Data Lineage</a>
+      <a href="../data-steward-register/index.html">Steward Register</a>
+      <a href="../data-retention-schedule/index.html">Retention Schedule</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>IT / System</h3>
+      <a href="../org-structure/index.html">Org Structure</a>
+      <a href="../job-roles/index.html">Job Roles</a>
+      <a href="../access-register/index.html">Access Register</a>
+      <a href="../system-pages/index.html">System Pages</a>
+    </div>
+  </div>
+
+  <!-- Access Control -->
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <!-- Page Content -->
+  <div id="page-content" class="page-container" hidden>
+
+    <h1 class="page-title ember-text">Job Roles</h1>
+
+    <!-- Tabs -->
+    <div class="tabs neo-glass">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="responsibilities">Responsibilities</button>
+      <button class="tab" data-tab="permissions">Permissions</button>
+    </div>
+
+    <div class="tab-content">
+
+      <!-- Overview -->
+      <div id="overview" class="tab-panel active">
+        <div class="role-grid">
+          <div class="role-card neo-glass">
+            <h2>Administrator</h2>
+            <p>Full system access, configuration, and oversight.</p>
+          </div>
+
+          <div class="role-card neo-glass">
+            <h2>Manager</h2>
+            <p>Department-level control and approvals.</p>
+          </div>
+
+          <div class="role-card neo-glass">
+            <h2>Supervisor</h2>
+            <p>Operational oversight and task assignment.</p>
+          </div>
+
+          <div class="role-card neo-glass">
+            <h2>Standard User</h2>
+            <p>Basic access to operational tools.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Responsibilities -->
+      <div id="responsibilities" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Role Responsibilities</h2>
+          <ul class="responsibility-list">
+            <li><strong>Administrator:</strong> System configuration, RBAC management, platform maintenance.</li>
+            <li><strong>Manager:</strong> Approvals, reporting, team oversight.</li>
+            <li><strong>Supervisor:</strong> Task assignment, operational monitoring.</li>
+            <li><strong>User:</strong> Complete assigned tasks and workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Permissions -->
+      <div id="permissions" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Permission Levels</h2>
+          <ul class="permission-list">
+            <li><span class="dot ember"></span> View</li>
+            <li><span class="dot ember"></span> Edit</li>
+            <li><span class="dot ember"></span> Approve</li>
+            <li><span class="dot ember"></span> Administer</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

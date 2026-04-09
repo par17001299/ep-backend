@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-Conformances</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="non-conformances.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="non-conformances.js" defer></script>
+</head>
+
+<body data-page="non-conformances">
+
+  <!-- Topbar -->
+  <header class="topbar neo-glass">
+    <div class="logo">EP Systems</div>
+    <nav class="topbar-actions">
+      <button id="menuButton" class="menu-button ember-glow">Menu</button>
+      <div class="user-badge">User</div>
+    </nav>
+  </header>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu neo-glass" hidden>
+    <div class="menu-section">
+      <h3>Operations</h3>
+      <a href="../maintenance/index.html">Maintenance</a>
+      <a href="../fleet/index.html">Fleet</a>
+      <a href="../inspections/index.html">Inspections</a>
+      <a href="../workloads/index.html">Workloads</a>
+      <a href="../shifts/index.html">Shifts</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>HR</h3>
+      <a href="../attendance/index.html">Attendance</a>
+      <a href="../training-records/index.html">Training Records</a>
+      <a href="../performance-review/index.html">Performance Review</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Quality</h3>
+      <a href="../audit-schedule/index.html">Audit Schedule</a>
+      <a href="../non-conformances/index.html">Non-Conformances</a>
+      <a href="../corrective-actions/index.html">Corrective Actions</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Risk</h3>
+      <a href="../risk-register/index.html">Risk Register</a>
+      <a href="../controls-register/index.html">Controls Register</a>
+      <a href="../controls-testing/index.html">Controls Testing</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>Data Governance</h3>
+      <a href="../data-lineage-map/index.html">Data Lineage</a>
+      <a href="../data-steward-register/index.html">Steward Register</a>
+      <a href="../data-retention-schedule/index.html">Retention Schedule</a>
+    </div>
+
+    <div class="menu-section">
+      <h3>IT / System</h3>
+      <a href="../org-structure/index.html">Org Structure</a>
+      <a href="../job-roles/index.html">Job Roles</a>
+      <a href="../access-register/index.html">Access Register</a>
+      <a href="../system-pages/index.html">System Pages</a>
+    </div>
+  </div>
+
+  <!-- Access Control -->
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <!-- Page Content -->
+  <div id="page-content" class="page-container" hidden>
+
+    <h1 class="page-title ember-text">Non-Conformances</h1>
+
+    <!-- Tabs -->
+    <div class="tabs neo-glass">
+      <button class="tab active" data-tab="open">Open</button>
+      <button class="tab" data-tab="closed">Closed</button>
+      <button class="tab" data-tab="categories">Categories</button>
+    </div>
+
+    <div class="tab-content">
+
+      <!-- Open -->
+      <div id="open" class="tab-panel active">
+        <div class="panel neo-glass">
+          <h2>Open Non-Conformances</h2>
+          <table class="nc-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="openTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Closed -->
+      <div id="closed" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>Closed Non-Conformances</h2>
+          <table class="nc-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th>Closed On</th>
+              </tr>
+            </thead>
+            <tbody id="closedTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div id="categories" class="tab-panel">
+        <div class="panel neo-glass">
+          <h2>NC Categories</h2>
+          <table class="nc-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTable">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>inventory</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="../../0-core/css/layout.css">
+  <link rel="stylesheet" href="inventory.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="inventory.js" defer></script>
+</head>
+
+<body data-page="inventory">
+  <div id="header"></div>
+
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <div id="page-content" class="page-container" hidden>
+    <h1>inventory</h1>
+    <p>This is the inventory page template.</p>
+  </div>
+
+  <script>
+    fetch("../../1-shared/header.html")
+      .then(r => r.text())
+      .then(html => header.innerHTML = html);
+
+    const page = "inventory";
+    const roles = window.currentUserRoles;
+
+    if (hasAccess(page, roles)) document.getElementById("page-content").hidden = false;
+    else document.getElementById("access-denied").hidden = false;
+  </script>
+</body>
+</html>

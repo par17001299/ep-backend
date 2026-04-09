@@ -1,0 +1,39 @@
+body {
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.overview-card {
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.maint-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.maint-table th,
+.maint-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.maint-table th {
+  text-align: left;
+  color: var(--ember);
+  font-weight: 600;
+}
+
+.panel {
+  padding: 25px;
+  border-radius: 16px;
+}

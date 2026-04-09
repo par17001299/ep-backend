@@ -1,0 +1,1 @@
+console.log("Loaded page: data-access-register");

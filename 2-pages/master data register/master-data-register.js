@@ -1,0 +1,1 @@
+console.log("Loaded page: master-data-register");

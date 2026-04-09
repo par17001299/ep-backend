@@ -1,0 +1,34 @@
+body {
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.role-card {
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.responsibility-list li,
+.permission-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dot.ember {
+  background: var(--ember);
+}

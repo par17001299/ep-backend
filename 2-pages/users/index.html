@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users</title>
+
+  <link rel="stylesheet" href="../../0-core/css/reset.css">
+  <link rel="stylesheet" href="../../0-core/css/tokens.css">
+  <link rel="stylesheet" href="../../0-core/css/components.css">
+  <link rel="stylesheet" href="users.v2.css">
+
+  <script src="../../0-core/js/permissions.js" defer></script>
+  <script src="../../0-core/js/roles.js" defer></script>
+  <script src="../../0-core/js/auth.js" defer></script>
+  <script src="../../0-core/js/access.js" defer></script>
+  <script src="../../0-core/js/ui.js" defer></script>
+  <script src="users.js" defer></script>
+</head>
+
+<body data-page="users">
+
+  <header class="topbar neo-glass">
+    <div class="logo">EP Systems</div>
+    <nav class="topbar-actions">
+      <button id="menuButton" class="menu-button ember-glow">Menu</button>
+      <div class="user-badge">User</div>
+    </nav>
+  </header>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu neo-glass" hidden>
+    <div class="menu-section">
+      <h3>IT / System</h3>
+      <a href="../org-structure/index.html">Org Structure</a>
+      <a href="../job-roles/index.html">Job Roles</a>
+      <a href="../access-register/index.html">Access Register</a>
+      <a href="../system-pages/index.html">System Pages</a>
+      <a href="../users/index.html">Users</a>
+    </div>
+  </div>
+
+  <div id="access-denied" hidden>You do not have access to this page.</div>
+
+  <div id="page-content" class="page-container" hidden>
+
+    <h1 class="page-title ember-text">Users</h1>
+
+    <div class="panel neo-glass">
+      <div class="panel-header">
+        <h2>User Directory</h2>
+        <button id="addUserBtn" class="ember-button">Add User</button>
+      </div>
+
+      <table class="users-table">
+        <thead>
+          <tr>
+            <th>Employee #</th>
+            <th>User</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Roles</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="usersTable"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Add/Edit User Modal -->
+  <div id="userModal" class="modal" hidden>
+    <div class="modal-content neo-glass">
+      <h2 id="modalTitle">Add User</h2>
+
+      <label>Employee Number</label>
+      <input id="empNumberInput" type="text">
+
+      <label>Name</label>
+      <input id="nameInput" type="text">
+
+      <label>Email</label>
+      <input id="emailInput" type="email">
+
+      <label>Department</label>
+      <select id="departmentInput"></select>
+
+      <label>Roles</label>
+      <select id="rolesInput" multiple></select>
+
+      <div class="modal-actions">
+        <button id="saveUserBtn" class="ember-button">Save</button>
+        <button id="cancelUserBtn" class="ember-button ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disable User Modal -->
+  <div id="disableModal" class="modal" hidden>
+    <div class="modal-content neo-glass">
+      <h2>Disable User</h2>
+      <p id="disableText"></p>
+
+      <div class="modal-actions">
+        <button id="confirmDisableBtn" class="ember-button danger">Disable</button>
+        <button id="cancelDisableBtn" class="ember-button ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
