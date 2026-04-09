@@ -4,7 +4,7 @@ import session from "express-session";
 import MySQLStoreFactory from "express-mysql-session";
 import cors from "cors";
 import dotenv from "dotenv";
-import { db } from "./src/config/db.js";
+import { db } from "./config/db.js";
 import authRoutes from "./src/modules/auth/auth.routes.js";
 import usersRoutes from "./src/modules/users/users.routes.js";
 
