@@ -1,14 +1,33 @@
-console.log("Loaded page: login");
+  import { login } from "./0-core/js/auth.js";
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
+  document.querySelector("#login-btn").addEventListener("click", async () => {
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
 
-togglePassword.addEventListener("click", () => {
-  const type = passwordInput.type === "password" ? "text" : "password";
-  passwordInput.type = type;
-  togglePassword.textContent = type === "password" ? "Show" : "Hide";
-});
+    const result = await login(email, password);
 
-document.getElementById("loginButton").addEventListener("click", () => {
-  alert("Static login placeholder — integrate authentication here.");
-});
+    if (result.user) {
+      // Login success
+      console.log("Logged in:", result.user);
+      window.location.href = "dashboard.html"; // or wherever you want
+    } else {
+      // Login failed
+      document.querySelector("#error").textContent = result.message;
+    }
+  });  import { login } from "./0-core/js/auth.js";
+
+  document.querySelector("#login-btn").addEventListener("click", async () => {
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+
+    const result = await login(email, password);
+
+    if (result.user) {
+      // Login success
+      console.log("Logged in:", result.user);
+      window.location.href = "dashboard.html"; // or wherever you want
+    } else {
+      // Login failed
+      document.querySelector("#error").textContent = result.message;
+    }
+  });

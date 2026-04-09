@@ -1,15 +1,30 @@
-// auth.js
-// Identity + current user context
+const API = "https://ep-backend-production.up.railway.app";
 
-// In a real system this would come from your IdP / SSO.
-// For now, this is your "I am developer" switch.
-window.currentUser = {
-  id: "u-elliott",
-  name: "Elliott",
-  email: "elliott@example.com",
-  roles: ["developer"], // <- add/remove roles here
-  department: "IT"
-};
+export async function login(email, password) {
+  const res = await fetch(`${API}/auth/login`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  });
 
-// Convenience alias used by all pages
-window.currentUserRoles = window.currentUser.roles;
+  return await res.json();
+}
+
+// LOGOUT
+export async function logout() {
+  await fetch(`${API}/auth/logout`, {
+    method: "POST",
+    credentials: "include"
+  });
+}
+
+// SESSION CHECK
+export async function getSessionUser() {
+  const res = await fetch(`${API}/auth/me`, {
+    credentials: "include"
+  });
+
+  if (!res.ok) return null;
+  return await res.json();
+}
